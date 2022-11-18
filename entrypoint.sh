@@ -219,7 +219,8 @@ set_output elapsed_time "$(echo "$(date +%s)"-"$start_time" | bc)"
 msg "Packaging the kernel..."
 zip_filename="${name}-${tag}.zip"
 if [[ -e "$workdir"/"$zipper_path" ]]; then
-    cp out/arch/"$arch"/boot/"$image" "$workdir"/"image"
+    pwd
+    ls
     cp out/arch/"$arch"/boot/"$image" "$workdir"/"$zipper_path"/"$image"
     cd "$workdir"/"$zipper_path" || exit 127
     rm -rf .git
