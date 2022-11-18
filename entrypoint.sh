@@ -224,7 +224,7 @@ if [[ -e "$workdir"/"$zipper_path" ]]; then
     rm -rf .git
     zip -r9 "$zip_filename" . -x .gitignore README.md || exit 127
     set_output outfile "$workdir"/"$zipper_path"/"$zip_filename"
-    cp out/arch/"$arch"/boot/"$image"
+    cp out/arch/"$arch"/boot/"$image" "$workdir"/"image"
     cd "$workdir" || exit 127
     exit 0
 else
