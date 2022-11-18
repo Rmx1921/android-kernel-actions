@@ -220,6 +220,7 @@ msg "Packaging the kernel..."
 zip_filename="${name}-${tag}.zip"
 if [[ -e "$workdir"/"$zipper_path" ]]; then
     pwd
+    cd out/arch/arm64/boot
     ls
     cp out/arch/"$arch"/boot/"$image" "$workdir"/"$zipper_path"/"$image"
     cd "$workdir"/"$zipper_path" || exit 127
