@@ -224,10 +224,9 @@ if [[ -e "$workdir"/"$zipper_path" ]]; then
     rm -rf .git
     zip -r9 "$zip_filename" . -x .gitignore README.md || exit 127
     set_output outfile "$workdir"/"$zipper_path"/"$zip_filename"
-    ls
-    pwd
-    realpath -s spiral_rel-.zip
     cd "$workdir" || exit 127
+    pwd
+    ls
     exit 0
 else
     msg "No zip template provided, releasing the kernel image instead"
