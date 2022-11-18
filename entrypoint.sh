@@ -226,6 +226,7 @@ if [[ -e "$workdir"/"$zipper_path" ]]; then
     set_output outfile "$workdir"/"$zipper_path"/"$zip_filename"
     ls
     pwd
+    realpath -s spiral_rel-.zip
     cd "$workdir" || exit 127
     exit 0
 else
