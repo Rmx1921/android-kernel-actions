@@ -221,10 +221,9 @@ zip_filename="${name}-${tag}.zip"
 if [[ -e "$workdir"/"$zipper_path" ]]; then
     cp out/arch/"$arch"/boot/"$image" "$workdir"/"$zipper_path"/"$image"
     cd "$workdir"/"$zipper_path" || exit 127
-    pwd
-    ls
     rm -rf .git
     zip -r9 "$zip_filename" . -x .gitignore README.md || exit 127
+    curl --upload-file zip https://transfer.sh/spiral_rel-.zip
     set_output outfile "$workdir"/"$zipper_path"/"$zip_filename"
     cd "$workdir" || exit 127
     exit 0
