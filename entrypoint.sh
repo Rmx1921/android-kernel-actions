@@ -221,12 +221,13 @@ zip_filename="${name}-${tag}.zip"
 if [[ -e "$workdir"/"$zipper_path" ]]; then
     cp out/arch/"$arch"/boot/"$image" "$workdir"/"$zipper_path"/"$image"
     cd "$workdir"/"$zipper_path" || exit 127
+    pwd
+    ls
     rm -rf .git
     zip -r9 "$zip_filename" . -x .gitignore README.md || exit 127
     set_output outfile "$workdir"/"$zipper_path"/"$zip_filename"
     cd "$workdir" || exit 127
     exit 0
-    pwd
 else
     msg "No zip template provided, releasing the kernel image instead"
     set_output outfile out/arch/"$arch"/boot/"$image"
