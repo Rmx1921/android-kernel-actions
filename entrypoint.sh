@@ -223,9 +223,10 @@ if [[ -e "$workdir"/"$zipper_path" ]]; then
     cd "$workdir"/"$zipper_path" || exit 127
     rm -rf .git
     zip -r9 "$zip_filename" . -x .gitignore README.md || exit 127
-    curl --upload-file zip https://transfer.sh/spiral_rel-.zip
     set_output outfile "$workdir"/"$zipper_path"/"$zip_filename"
     cd "$workdir" || exit 127
+    cd /github/workspace/zipper/
+    la
     exit 0
 else
     msg "No zip template provided, releasing the kernel image instead"
