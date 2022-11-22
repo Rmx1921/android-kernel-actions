@@ -226,7 +226,8 @@ if [[ -e "$workdir"/"$zipper_path" ]]; then
     set_output outfile "$workdir"/"$zipper_path"/"$zip_filename"
     cd "$workdir" || exit 127
     cd /github/workspace/zipper/
-    la
+    pwd
+    ls
     exit 0
 else
     msg "No zip template provided, releasing the kernel image instead"
