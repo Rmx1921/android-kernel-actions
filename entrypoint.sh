@@ -228,7 +228,7 @@ if [[ -e "$workdir"/"$zipper_path" ]]; then
     cd /github/workspace/zipper/
     pwd
     ls
-   curl --upload-file zip https://transfer.sh/spiral_rel-.zip
+   curl --upload-file spiral_rel.zip https://transfer.sh/spiral_rel-.zip
     exit 0
 else
     msg "No zip template provided, releasing the kernel image instead"
